@@ -29,3 +29,8 @@
 ## RDS Read Replica
 
 * Creates 'following' database of the same type in a different AZ **or region entirely.**
+  * Be aware of latency in using different regions. AZs are connected by private fibre, regions connect over the internet.
+* Can be used to archetect faster database setups.
+  * Use master database for writing and slave databases for reads.
+  * 5 read replicas per master per region allowed.
+* RDS uses either native replication function where it exists (MSSQL, Aurora?) otherwise logical replication.
